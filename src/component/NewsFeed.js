@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import News from "./News";
-import styles from "./Newsfeed.module.css";
-export default class Test extends Component {
+import styles from "./NewsFeed.module.css";
+export default class NewsFeed extends Component {
   componentDidMount = () => {
-    this.props.GetNew();
+    this.props.getNew();
   };
   render() {
-    console.log(this.props);
     return (
       <div className={styles.base}>
-        {this.props.UserData &&
-          this.props.UserData.articles &&
-          this.props.UserData.articles.map(news => {
+        {this.props.userData &&
+          this.props.userData.articles &&
+          this.props.userData.articles.map(news => {
             return (
               <News
                 image={news.urlToImage}

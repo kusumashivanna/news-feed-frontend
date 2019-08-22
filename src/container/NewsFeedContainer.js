@@ -1,25 +1,25 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Newsfeed from "../component/Newsfeed.js";
-import { GetNews } from "../action/Newsfeedaction.js";
+import NewsFeed from "../component/NewsFeed.js";
+import { getNews } from "../action/NewsFeedAction.js";
 
 const mapDispatchToProps = dispatch => {
   return {
-    GetNew: () => {
-      dispatch(GetNews());
+    getNew: () => {
+      dispatch(getNews());
     }
   };
 };
 const mapStateToProps = state => {
   return {
-    UserData: state.newsData
+    userData: state.newsData
   };
 };
 
-const Newsfeedconatiner = withRouter(
+const NewsFeedConatiner = withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Newsfeed)
+  )(NewsFeed)
 );
-export default Newsfeedconatiner;
+export default NewsFeedConatiner;

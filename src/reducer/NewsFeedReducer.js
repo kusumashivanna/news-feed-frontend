@@ -1,4 +1,4 @@
-import * as newsAction from "../action/Newsfeedaction.js";
+import * as newsAction from "../action/NewsFeedAction.js";
 const NewsData = (
   state = {
     loading: false,

@@ -5,14 +5,14 @@ export const GET_NEWS_REQUEST = "GET_NEWS_REQUEST";
 export const GET_NEWS_SUCCESS = "GET_NEWS_SUCCESS";
 export const GET_NEWS_FAILURE = "GET_NEWS_FAILURE";
 
-export function GetNewsRequest() {
+export function getNewsRequest() {
   return {
     type: GET_NEWS_REQUEST,
     status: REQUEST
   };
 }
 
-export function GetNewsSuccess(data) {
+export function getNewsSuccess(data) {
   return {
     type: GET_NEWS_SUCCESS,
     status: SUCCESS,
@@ -20,7 +20,7 @@ export function GetNewsSuccess(data) {
   };
 }
 
-export function GetNewsFailure(error) {
+export function getNewsFailure(error) {
   return {
     type: GET_NEWS_FAILURE,
     status: FAILURE,
@@ -28,18 +28,25 @@ export function GetNewsFailure(error) {
   };
 }
 
-export function GetNews() {
+export function getNews() {
   return async dispatch => {
-    dispatch(GetNewsRequest());
+    dispatch(getNewsRequest());
     try {
-      const result = await fetch("https://newsapi.org/v2/everything?q=bitcoin&from=2019-07-22&sortBy=publishedAt&apiKey=1f02327de8724a96aabfe0202a93a7c1");
+      const query = "bitcoin";
+      const fromDate = "2019-07-22";
+      const sortBy = "publishedAt";
+      const apiKey = "1f02327de8724a96aabfe0202a93a7c1";
+      const result = await fetch(
+        `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&sortBy=${sortBy}&apiKey=${apiKey}`
+      );
+
       const resultJson = await result.json();
       if (resultJson.error) {
         throw new Error(resultJson.error);
       }
-      return dispatch(GetNewsSuccess(resultJson));
+      return dispatch(getNewsSuccess(resultJson));
     } catch (e) {
-      dispatch(GetNewsFailure(e.message));
+      dispatch(getNewsFailure(e.message));
     }
   };
 }
