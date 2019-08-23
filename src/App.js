@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NewsFeedContainer from "./container/NewsFeedContainer";
+import NewsFeedContainer from "./container/newsFeedContainer";
 
 export default class App extends Component {
   render() {

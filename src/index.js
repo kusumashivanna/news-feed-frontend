@@ -7,7 +7,7 @@ import thunk from "redux-thunk";
 
 import "./index.css";
 import App from "./App.js";
-import NewsFeedReducer from "../src/reducer/NewsFeedReducer.js";
+import NewsFeedReducer from "./reducer/newsFeedReducer.js";
 
 const creatStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = creatStoreWithMiddleware(NewsFeedReducer);
