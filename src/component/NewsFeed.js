@@ -3,7 +3,7 @@ import News from "./News";
 import styles from "./NewsFeed.module.css";
 export default class NewsFeed extends Component {
   componentDidMount = () => {
-    this.props.getNew();
+    this.props.getNews();
   };
   render() {
     return (

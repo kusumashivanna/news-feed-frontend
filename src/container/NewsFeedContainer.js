@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import NewsFeed from "../component/NewsFeed.js";
-import { getNews } from "../action/NewsFeedAction.js";
+import { getNewsFeed} from "../action/NewsFeedAction.js";
 
 const mapDispatchToProps = dispatch => {
   return {
-    getNew: () => {
-      dispatch(getNews());
+    getNews: () => {
+      dispatch(getNewsFeed());
     }
   };
 };
