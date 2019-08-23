@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Newsfeedcontainer from "./container/Newsfeedcontainer";
+import NewsFeedContainer from "./container/NewsFeedContainer";
 
 export default class App extends Component {
   render() {
-    return <Newsfeedcontainer />;
+    return <NewsFeedContainer />;
   }
 }

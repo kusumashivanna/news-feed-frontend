@@ -7,10 +7,10 @@ import thunk from "redux-thunk";
 
 import "./index.css";
 import App from "./App.js";
-import Newsfeedreducer from "../src/reducer/Newsfeedreducer.js";
+import NewsFeedReducer from "./reducer/newsFeedReducer.js";
 
 const creatStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-const store = creatStoreWithMiddleware(Newsfeedreducer);
+const store = creatStoreWithMiddleware(NewsFeedReducer);
 
 ReactDOM.render(
   <Provider store={store}>
