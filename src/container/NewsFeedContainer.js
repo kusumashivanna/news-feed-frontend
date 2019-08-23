@@ -5,14 +5,14 @@ import { getNewsFeed} from "../action/NewsFeedAction.js";
 
 const mapDispatchToProps = dispatch => {
   return {
-    getNews: () => {
+    getNewsFeed: () => {
       dispatch(getNewsFeed());
     }
   };
 };
 const mapStateToProps = state => {
   return {
-    userData: state.newsData
+    newsFeed: state.newsData
   };
 };
 
